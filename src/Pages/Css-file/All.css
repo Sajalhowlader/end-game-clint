@@ -22,13 +22,18 @@
   width: 25%;
   margin: 0 auto;
 }
-
-.home-container h2 {
+.modal-info {
+    width: 70%;
+}
+.toolsTasks {
   font-weight: bold;
   font-size: 25px;
   color: #6889ff;
   text-align: center;
   margin-top: 30px;
+}
+.taskTitles {
+  margin-bottom: 30px;
 }
 .home-info label {
   font-weight: bold;

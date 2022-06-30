@@ -25,7 +25,7 @@ const Home = () => {
   };
   return (
     <div className="home-container">
-      <h2>Add Your Task</h2>
+      <h2 className="toolsTasks">Add Your Task</h2>
 
       <form className="home-info" onSubmit={addTask}>
         <label>Your Task Name</label>
@@ -36,7 +36,7 @@ const Home = () => {
           <FaArrowCircleRight />
         </button>
       </form>
-      <h2>Your Task List</h2>
+      <h2 className="toolsTasks taskTitles">Your Task List</h2>
       <TaskList />
     </div>
   );
