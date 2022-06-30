@@ -1,25 +1,28 @@
 import { FaArrowCircleRight } from "react-icons/fa";
+import TaskList from "./TaskList";
 const Home = () => {
   const addTask = (e) => {
     e.preventDefault();
     const taskName = e.target.tName.value;
     const taskDetails = e.target.details.value;
 
-    console.log(taskName, taskDetails);
+    fetch("http://localhost:5000/addTask", {
+      method: "POST",
+      body: JSON.stringify({
+        name: taskName,
+        details: taskDetails,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          alert("add successfully");
+        }
+      });
   };
-  //   fetch("", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       title: "foo",
-  //       body: "bar",
-  //       userId: 1,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((json) => console.log(json));
   return (
     <div className="home-container">
       <h2>Add Your Task</h2>
@@ -33,6 +36,8 @@ const Home = () => {
           <FaArrowCircleRight />
         </button>
       </form>
+      <h2>Your Task List</h2>
+      <TaskList />
     </div>
   );
 };
