@@ -1,3 +1,4 @@
+import { FaArrowCircleRight } from "react-icons/fa";
 const Home = () => {
   return (
     <div className="home-container">
@@ -7,6 +8,9 @@ const Home = () => {
         <input type="text" />
         <label>Your Task Details</label>
         <textarea type="text" />
+        <p className="arrow">
+          <FaArrowCircleRight />
+        </p>
       </div>
     </div>
   );
