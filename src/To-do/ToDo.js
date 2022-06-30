@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
 import Modal from "react-bootstrap/Modal";
-import { FaEdit } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleRight, FaEdit } from "react-icons/fa";
 const ToDo = () => {
   const [tasks, setTasks] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const [singleTask, setSingleTask] = useState(null);
   useEffect(() => {
     fetch("http://localhost:5000/allTask")
       .then((res) => res.json())
@@ -13,25 +13,50 @@ const ToDo = () => {
   }, []);
 
   function MyVerticallyCenteredModal(props) {
-    return (
+    const updateTask = (e) => {
+      e.preventDefault();
+      const taskName = e.target.tName.value;
+      const taskDetails = e.target.details.value;
+      console.log(taskName);
+      const URL = `http://localhost:5000/updateData?id=${singleTask._id}`;
+
+      fetch(URL, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: taskName,
+          details: taskDetails,
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data) {
+            alert("add successfully");
+          }
+        });
+    };
+     return (
       <Modal
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-      >
+       >
+        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          <form className="home-info modal-info">
+          <form className="home-info modal-info" onSubmit={updateTask}>
             <label>Update Task Name</label>
             <input type="text" name="tName" />
             <label>Update Task Details</label>
-            <textarea type="text" name="details" />
+            <textarea spellcheck="true" type="text" name="details" />
           </form>
         </Modal.Body>
         <Modal.Footer>
-        <button type="submit" className="arrow">
-          <FaArrowCircleRight />
-        </button>
+          <button type="submit" className="arrow">
+            <FaArrowCircleRight />
+          </button>
         </Modal.Footer>
       </Modal>
     );
@@ -43,7 +68,10 @@ const ToDo = () => {
         {tasks.map((task) => (
           <div className="all-task-info">
             <p className="edit" onClick={() => setModalShow(true)}>
-              <FaEdit className="cursor-pointer" />
+              <FaEdit
+                className="cursor-pointer"
+                onClick={() => setSingleTask(task)}
+              />
             </p>
             <MyVerticallyCenteredModal
               show={modalShow}
