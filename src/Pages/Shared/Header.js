@@ -1,22 +1,37 @@
 import { Nav, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="px-5 header-nav">
-        <Navbar.Brand href="#home"><span className="nav-title">ToolTasks</span></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" className="btn"/>
+        <Navbar.Brand href="#home">
+          <span className="nav-title">ToolTasks</span>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className="btn" />
         <Navbar.Collapse id="responsive-navbar-nav" className="btn-2">
           <Nav className="ms-auto nav-menu">
-            <Nav.Link className="text-white mx-3" href="#features">
+            <NavLink className="text-white mx-3 text-decoration-none" to="/">
+              Home
+            </NavLink>
+            <NavLink
+              className="text-white mx-3 text-decoration-none"
+              to="/complete"
+            >
               Completed Tasks
-            </Nav.Link>
-            <Nav.Link className="text-white mx-3" href="#pricing">
+            </NavLink>
+            <NavLink
+              className="text-white mx-3 text-decoration-none"
+              to="/toDo"
+            >
               To-Do
-            </Nav.Link>
-            <Nav.Link className="text-white mx-3 me-5" href="#pricing">
+            </NavLink>
+            <NavLink
+              className="text-white mx-3 text-decoration-none me-5"
+              to="/calendar"
+            >
               Calendar
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
