@@ -1,0 +1,15 @@
+/* Header part */
+
+.header-nav {
+  background: #0e023e;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+.nav-title {
+  color: #6889ff;
+  font-size: 35px;
+  font-family: monospace;
+}
+.btn{
+    border: 2px solid white !important;
+}
