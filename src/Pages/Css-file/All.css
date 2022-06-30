@@ -69,3 +69,31 @@
   border: none;
   background: none;
 }
+/* All tasks */
+.allTasks-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.taskTitle {
+  overflow-wrap: break-word;
+}
+.taskDetails {
+  overflow-wrap: break-word;
+}
+.all-task-info {
+  width: 285px;
+  background: #f9f9f9;
+  padding: 15px;
+  box-shadow: -1px 4px 7px 0px #afaaaa;
+  border-radius: 5px;
+}
+.edit {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  color: #100889;
+}
+hr {
+  margin: 4px;
+}
