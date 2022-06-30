@@ -10,6 +10,48 @@
   font-size: 35px;
   font-family: monospace;
 }
-.btn{
-    border: 2px solid white !important;
+.btn {
+  border: 2px solid white !important;
+}
+/* Home section */
+
+.home-info {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.home-container h2 {
+  font-weight: bold;
+  font-size: 25px;
+  color: #6889ff;
+  text-align: center;
+  margin-top: 60px;
+}
+.home-info label {
+  font-weight: bold;
+  color: #565656;
+  margin-bottom: 6px;
+}
+
+.home-info input {
+  border: 1px solid #74c7f7;
+  border-radius: 5px;
+  padding: 2px 0px;
+  outline: none;
+}
+
+.home-info textarea {
+  border: 1px solid #74c7f7;
+  border-radius: 5px;
+  height: 80px;
+  outline: none;
+}
+.home-info textarea:focus {
+    border: 2px solid #2c4def;
+}
+.home-info input:focus {
+    border: 2px solid #2c4def;
 }
