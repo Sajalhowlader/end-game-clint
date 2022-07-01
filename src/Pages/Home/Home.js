@@ -21,7 +21,7 @@ const Home = () => {
       .then((data) => {
         if (data) {
           alert("add successfully");
-          form.current.reset(); 
+          form.reset();
         }
       });
   };
