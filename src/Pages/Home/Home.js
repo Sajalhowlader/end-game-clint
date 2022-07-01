@@ -6,8 +6,7 @@ const Home = () => {
     const taskName = e.target.tName.value;
     const taskDetails = e.target.details.value;
 
-    fetch("https://mysterious-tor-58361.herokuapp.com/
-addTask", {
+    fetch("https://mysterious-tor-58361.herokuapp.com/addTask", {
       method: "POST",
       body: JSON.stringify({
         name: taskName,

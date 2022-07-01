@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
-  
+
   useEffect(() => {
-    fetch("https://mysterious-tor-58361.herokuapp.com/
-allTask")
+    fetch("https://mysterious-tor-58361.herokuapp.com/allTask")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);
