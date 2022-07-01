@@ -29,9 +29,9 @@ const Home = () => {
 
       <form className="home-info" onSubmit={addTask}>
         <label>Your Task Name</label>
-        <input type="text" name="tName" />
+        <input type="text" name="tName" required />
         <label>Your Task Details</label>
-        <textarea type="text" name="details" />
+        <textarea type="text" name="details" required />
         <button type="submit" className="arrow">
           <FaArrowCircleRight />
         </button>

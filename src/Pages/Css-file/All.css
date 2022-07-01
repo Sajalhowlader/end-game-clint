@@ -23,7 +23,7 @@
   margin: 0 auto;
 }
 .modal-info {
-    width: 70%;
+  width: 70%;
 }
 .toolsTasks {
   font-weight: bold;
@@ -87,7 +87,7 @@
   overflow-wrap: break-word;
 }
 .all-task-info {
-  width: 285px;
+  width: 300px;
   background: #f9f9f9;
   padding: 15px;
   box-shadow: -1px 4px 7px 0px #afaaaa;
@@ -96,7 +96,7 @@
 .edit {
   margin: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   color: #100889;
   cursor: pointer;
 }
@@ -107,27 +107,54 @@ hr {
   opacity: 0.1;
 }
 .rdp-month:last-child {
-    margin: 20px auto;
+  margin: 20px auto;
 }
-
 
 footer.footers {
-    margin-top: 50px;
-    padding: 20px 0px;
-    background: #070014;
-    text-align: center;
-    color: white;
+  margin-top: 50px;
+  padding: 20px 0px;
+  background: #070014;
+  text-align: center;
+  color: white;
 }
 .footers {
-    margin-top: 50px;
-    padding: 20px 0px;
-    background: #070014;
-    text-align: center;
-    color: white;
+  margin-top: 50px;
+  padding: 20px 0px;
+  background: #070014;
+  text-align: center;
+  color: white;
 }
 
 .icons {
-    margin: 0px 10px;
-    font-size: 25px;
-    color: #2ce386;
+  margin: 0px 10px;
+  font-size: 25px;
+  color: #2ce386;
+}
+
+@media screen and (max-width: 688px) {
+  .allTasks-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 15px !important;
+  }
+  .all-task-info {
+    margin: 0 auto;
+  }
+  .home-info {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .allTasks-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px !important;
+    gap: 40px;
+  }
+  .all-task-info {
+    margin: 0 auto;
+  }
+  .home-info {
+    width: 70%;
+  }
 }
