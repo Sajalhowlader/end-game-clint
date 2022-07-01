@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <Navbar collapseOnSelect expand="lg" className="px-5 header-nav">
         <Navbar.Brand href="#home">
-          <span className="nav-title">ToolTasks</span>
+          <span className="nav-title">TakeTasks</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className="btn" />
         <Navbar.Collapse id="responsive-navbar-nav" className="btn-2">
