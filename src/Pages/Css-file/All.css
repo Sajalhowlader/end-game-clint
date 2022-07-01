@@ -51,14 +51,8 @@
   margin-bottom: 3px;
 }
 
-.home-info textarea {
-  border: 1px solid #74c7f7;
-  border-radius: 5px;
-  height: 80px;
-  padding: 2px 10px;
-  outline: none;
-  font-weight: 500;
-  color: #2a2a2a;
+.details-info {
+  padding-bottom: 80px !important;
 }
 .home-info textarea:focus {
   border: 2px solid #2c4def;

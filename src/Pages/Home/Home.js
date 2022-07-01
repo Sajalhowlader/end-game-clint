@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 import TaskList from "./TaskList";
 const Home = () => {
@@ -5,7 +6,7 @@ const Home = () => {
     e.preventDefault();
     const taskName = e.target.tName.value;
     const taskDetails = e.target.details.value;
-
+  
     fetch("https://mysterious-tor-58361.herokuapp.com/addTask", {
       method: "POST",
       body: JSON.stringify({
@@ -20,6 +21,7 @@ const Home = () => {
       .then((data) => {
         if (data) {
           alert("add successfully");
+          e.value.reset();
         }
       });
   };
@@ -31,7 +33,7 @@ const Home = () => {
         <label>Your Task Name</label>
         <input type="text" name="tName" required />
         <label>Your Task Details</label>
-        <textarea type="text" name="details" required />
+        <input className="details-info" type="text" name="details" required />
         <button type="submit" className="arrow">
           <FaArrowCircleRight />
         </button>
