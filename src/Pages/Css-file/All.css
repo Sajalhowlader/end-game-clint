@@ -92,6 +92,8 @@
   display: flex;
   justify-content: space-between;
   color: #100889;
+}
+.cursor {
   cursor: pointer;
 }
 hr {
@@ -104,13 +106,6 @@ hr {
   margin: 20px auto;
 }
 
-footer.footers {
-  margin-top: 50px;
-  padding: 20px 0px;
-  background: #070014;
-  text-align: center;
-  color: white;
-}
 .footers {
   margin-top: 50px;
   padding: 20px 0px;

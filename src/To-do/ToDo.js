@@ -46,17 +46,14 @@ const ToDo = () => {
             <p className="edit">
               <p className="checkbox">
                 <input
+                  className="cursor"
                   onClick={() => complete(task._id, task.name, task.details)}
                   type="checkbox"
                   name="checks"
-                  className="cursor-pointer"
                 />
               </p>
               <p>
-                <FaEdit
-                  className="cursor-pointer"
-                  onClick={() => updated(task._id)}
-                />
+                <FaEdit className="cursor" onClick={() => updated(task._id)} />
               </p>
             </p>
 
