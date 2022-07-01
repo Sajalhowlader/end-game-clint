@@ -29,33 +29,49 @@ const ToDo = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
+          // setMakeHover(false)
           swal({
-            title: "Update Task Successfully!!",
+            title: "Add to Complete Task!!",
             icon: "success",
             button: "OK!",
           });
         }
+        const remaining = tasks.filter((task) => task._id !== id);
+        setTasks(remaining);
       });
   };
   return (
-    <div>
+    <div className="vhHeight">
       <h2 className="toolsTasks taskTitles"> My All Task</h2>
       <div className="allTasks-container px-5">
         {tasks.map((task) => (
           <div className="all-task-info">
-            <p className="edit">
-              <p className="checkbox">
-                <input
-                  className="cursor"
-                  onClick={() => complete(task._id, task.name, task.details)}
-                  type="checkbox"
-                  name="checks"
-                />
-              </p>
-              <p>
-                <FaEdit className="cursor" onClick={() => updated(task._id)} />
-              </p>
-            </p>
+            {task.complete ? (
+              <>
+                <p>Task Complete</p>
+              </>
+            ) : (
+              <>
+                <p className="edit">
+                  <p className="checkbox">
+                    <input
+                      className="cursor"
+                      onClick={() =>
+                        complete(task._id, task.name, task.details)
+                      }
+                      type="checkbox"
+                      name="checks"
+                    />
+                  </p>
+                  <p>
+                    <FaEdit
+                      className="cursor"
+                      onClick={() => updated(task._id)}
+                    />
+                  </p>
+                </p>
+              </>
+            )}
 
             <div className="taskTitle">Name: {task.name}</div>
             <hr />

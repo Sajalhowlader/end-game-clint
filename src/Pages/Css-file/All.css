@@ -14,7 +14,9 @@
   border: 2px solid white !important;
 }
 /* Home section */
-
+.vhHeight{
+  height: 75vh;
+}
 .home-info {
   margin-top: 25px;
   display: flex;

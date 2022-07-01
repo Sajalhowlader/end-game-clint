@@ -9,7 +9,7 @@ const Complete = () => {
       .then((data) => setCompleteTasks(data));
   }, []);
   return (
-    <div>
+    <div className="vhHeight">
          <h2 className="toolsTasks taskTitles">My Complete Tasks</h2>
       <div className="allTasks-container px-5">
         {completeTasks.map((task) => (

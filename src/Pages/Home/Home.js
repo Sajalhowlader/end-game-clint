@@ -31,7 +31,7 @@ const Home = () => {
       });
   };
   return (
-    <div className="home-container">
+    <div className="home-container vhHeight">
       <h2 className="toolsTasks">Add Your Task</h2>
 
       <form className="home-info" ref={form} onSubmit={addTask}>

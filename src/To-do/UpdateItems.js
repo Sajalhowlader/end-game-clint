@@ -39,7 +39,7 @@ const UpdateItems = () => {
       });
   };
   return (
-    <div>
+    <div className="vhHeight">
       <div className="all-task-info">
         <div className="taskTitle">Name: {update.name}</div>
         <hr />
