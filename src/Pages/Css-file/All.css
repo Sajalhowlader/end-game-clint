@@ -109,3 +109,25 @@ hr {
 .rdp-month:last-child {
     margin: 20px auto;
 }
+
+
+footer.footers {
+    margin-top: 50px;
+    padding: 20px 0px;
+    background: #070014;
+    text-align: center;
+    color: white;
+}
+.footers {
+    margin-top: 50px;
+    padding: 20px 0px;
+    background: #070014;
+    text-align: center;
+    color: white;
+}
+
+.icons {
+    margin: 0px 10px;
+    font-size: 25px;
+    color: #2ce386;
+}
