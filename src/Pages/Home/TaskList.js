@@ -4,7 +4,8 @@ const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   
   useEffect(() => {
-    fetch("http://localhost:5000/allTask")
+    fetch("https://mysterious-tor-58361.herokuapp.com/
+allTask")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);

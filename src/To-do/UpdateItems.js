@@ -6,7 +6,8 @@ const UpdateItems = () => {
   const [update, setUpdate] = useState({});
   const { toId } = useParams();
   useEffect(() => {
-    const url = `http://localhost:5000/allTask/${toId}`;
+    const url = `https://mysterious-tor-58361.herokuapp.com/
+allTask/${toId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
@@ -17,7 +18,8 @@ const UpdateItems = () => {
     const taskName = e.target.tName.value;
     const taskDetails = e.target.details.value;
 
-    fetch(`http://localhost:5000/allTask/${toId}`, {
+    fetch(`https://mysterious-tor-58361.herokuapp.com/
+allTask/${toId}`, {
       method: "PUT",
       body: JSON.stringify({
         name: taskName,

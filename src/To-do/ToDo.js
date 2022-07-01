@@ -5,7 +5,8 @@ const ToDo = () => {
   const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/allTask")
+    fetch("https://mysterious-tor-58361.herokuapp.com/
+allTask")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);
@@ -14,7 +15,8 @@ const ToDo = () => {
     navigate(`/toDo/${id}`);
   };
   const complete = (id, name, details) => {
-    fetch("http://localhost:5000/complete", {
+    fetch("https://mysterious-tor-58361.herokuapp.com/
+complete", {
       method: "POST",
       body: JSON.stringify({
         id: id,

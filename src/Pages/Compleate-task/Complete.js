@@ -4,7 +4,8 @@ const Complete = () => {
   const [completeTasks, setCompleteTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allCompleteTask")
+    fetch("https://mysterious-tor-58361.herokuapp.com/
+allCompleteTask")
       .then((res) => res.json())
       .then((data) => setCompleteTasks(data));
   }, []);
