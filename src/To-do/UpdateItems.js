@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-
+import swal from "sweetalert";
 const UpdateItems = () => {
   const [update, setUpdate] = useState({});
   const { toId } = useParams();
@@ -12,8 +12,8 @@ const UpdateItems = () => {
       .then((data) => setUpdate(data));
   }, [toId]);
 
-  const updateTask=(e)=>{
-    e.preventDefault()
+  const updateTask = (e) => {
+    e.preventDefault();
     const taskName = e.target.tName.value;
     const taskDetails = e.target.details.value;
 
@@ -30,13 +30,16 @@ const UpdateItems = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          alert("Update successfully");
+          swal({
+            title: "Update Task Successfully!!",
+            icon: "success",
+            button: "OK!",
+          });
         }
       });
-  }
+  };
   return (
     <div>
-          
       <div className="all-task-info">
         <div className="taskTitle">Name: {update.name}</div>
         <hr />
@@ -48,7 +51,7 @@ const UpdateItems = () => {
         <label>Update Task Name</label>
         <input type="text" name="tName" />
         <label>Update Task Details</label>
-        <textarea type="text" name="details" />
+        <input className="details-info" type="text" name="details" required />
         <button type="submit" className="arrow">
           <FaArrowCircleRight />
         </button>

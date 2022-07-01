@@ -118,7 +118,12 @@ footer.footers {
   text-align: center;
   color: white;
 }
-
+.checkbox:hover .blank {
+  display: none;
+}
+.checkbox:hover .show {
+  display: block;
+}
 .icons {
   margin: 0px 10px;
   font-size: 25px;

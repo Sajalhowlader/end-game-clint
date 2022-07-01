@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { FaCheckCircle, FaEdit } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 const ToDo = () => {
   const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
@@ -28,7 +29,11 @@ const ToDo = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          alert("add complete task");
+          swal({
+            title: "Update Task Successfully!!",
+            icon: "success",
+            button: "OK!",
+          });
         }
       });
   };
@@ -39,9 +44,12 @@ const ToDo = () => {
         {tasks.map((task) => (
           <div className="all-task-info">
             <p className="edit">
-              <p className="text-success">
-                <FaCheckCircle
+              <p className="checkbox">
+                <input
                   onClick={() => complete(task._id, task.name, task.details)}
+                  type="checkbox"
+                  name="checks"
+                  className="cursor-pointer"
                 />
               </p>
               <p>

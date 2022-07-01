@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { FaArrowCircleRight } from "react-icons/fa";
+import swal from "sweetalert";
 import TaskList from "./TaskList";
 const Home = () => {
   const form = useRef(null);
@@ -20,9 +21,13 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          alert("add successfully");
-          form.reset();
+          swal({
+            title: "Add Task Successfully!!",
+            icon: "success",
+            button: "OK!",
+          });
         }
+        form.current.reset();
       });
   };
   return (
